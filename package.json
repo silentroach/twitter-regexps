@@ -14,6 +14,9 @@
     "regexp",
     "precompiled"
   ],
+  "files": [
+    "src/"
+  ],
   "homepage": "https://github.com/silentroach/twitter-regexps",
   "author": "Igor Kalashnikov <igor.kalashnikov@me.com> (https://github.com/silentroach)",
   "license": "MIT",
