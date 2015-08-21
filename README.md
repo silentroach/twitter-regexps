@@ -8,3 +8,48 @@ Some regular expressions extracted from [twitter-text package](https://www.npmjs
 All regexps are provided as is without any modifications.
 
 <!-- CUT -->
+
+## hashtag
+
+Extract hashtags.
+
+### Examples
+
+```js
+var regexps = require('twitter-regexps');
+
+var data = regexps.hashtag.exec('Some text with #hashtag');
+/* hashtag  */ data.3;     // 'hashtag'
+/* position */ data.index; // 14
+```
+
+## mention
+
+Extract mentions.
+
+### Examples
+
+```js
+var regexps = require('twitter-regexps');
+
+var data = regexps.mention.exec('Some @username mention');
+/* username */ data.3;     // 'username'
+/* position */ data.index; // 4
+```
+
+## url
+
+Extract urls.
+
+### Examples
+
+```js
+var regexps = require('twitter-regexps');
+
+var data = regexps.url.exec('Some tweet with https://www.wikipedia.org/wiki/twitter link');
+/* url      */ data.3;     // 'https://www.wikipedia.org/wiki/twitter'
+/* protocol */ data.4;     // 'https://'
+/* domain   */ data.5;     // 'www.wikipedia.org'
+/* path     */ data.7;     // '/wiki/twitter'
+/* position */ data.index; // 15
+```
