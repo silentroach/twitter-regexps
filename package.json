@@ -1,0 +1,25 @@
+{
+  "name": "twitter-regexps",
+  "version": "0.0.0",
+  "description": "Twitter official precompiled regexps",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "node build.js",
+    "clean": "rimraf src",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "twitter",
+    "text",
+    "regexp",
+    "precompiled"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "js-string-escape": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.4.2",
+    "twitter-text": "^1.12.0"
+  }
+}
