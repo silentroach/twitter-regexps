@@ -1,30 +1,29 @@
-var path = require('path');
-var fs = require('fs');
+const path = require('path');
+const fs = require('fs');
 
-var twitterText = require('twitter-text');
-var twitterTextPackageInfo = require('twitter-text/package.json');
-var jsStringEscape = require('js-string-escape');
-var del = require('del');
+const twitterText = require('twitter-text');
+const twitterTextPackageInfo = require('twitter-text/package.json');
+const jsStringEscape = require('js-string-escape');
+const del = require('del');
 
 // twitter text regexen property => regexp filename
-var map = {
+const map = {
 	validHashtag: 'hashtag',
 	validMentionOrList: 'mention',
 	extractUrl: 'url'
 };
 
-var headerComment = '// generated automatically from twitter-text@' +
-	twitterTextPackageInfo.version + ' (' + twitterTextPackageInfo.homepage + ')';
+const headerComment = `// generated automatically from twitter-text@${twitterTextPackageInfo.version} (${twitterTextPackageInfo.homepage})`;
 
-var outputPath = path.resolve(__dirname, '..');
+const outputPath = path.resolve(__dirname, '..');
 
-var modules = [];
+const modules = [];
 
 del.sync(['../*.js']);
 
-Object.keys(map).forEach(function(regexenKey) {
-	var targetName = map[regexenKey];
-	var regexp = twitterText.regexen[regexenKey];
+Object.keys(map).forEach(regexenKey => {
+	const targetName = map[regexenKey];
+	const regexp = twitterText.regexen[regexenKey];
 
 	if (undefined === regexp) {
 		throw new Error('Failed to find regexp ' + regexenKey);
@@ -32,27 +31,25 @@ Object.keys(map).forEach(function(regexenKey) {
 
 	modules.push(targetName);
 
-	var escaped = jsStringEscape(regexp);
-	var parts = escaped.match(/\/(.*)\/([^\/]*)/);
+	const escaped = jsStringEscape(regexp);
+	const [fake, escapedRegexp, escapedRegexpFlags] = escaped.match(/\/(.*)\/([^\/]*)/);
 
-	fs.writeFileSync(
-		path.resolve(outputPath, targetName + '.js'),
-		[
-			headerComment,
-			'// require(\'twitter-text\').regexen.' + regexenKey,
-			'module.exports = new RegExp("' + parts[1] + '", "' + parts[2] + '");'
-		].join('\n')
-	);
+	const moduleContent = `${headerComment}
+
+// require('twitter-text').regexen.${regexenKey}
+module.exports = new RegExp("${escapedRegexp}", "${escapedRegexpFlags}");
+`;
+
+	fs.writeFileSync(path.resolve(outputPath, targetName + '.js'), moduleContent);
 });
 
-fs.writeFileSync(
-	path.resolve(outputPath, 'index.js'),
-	[
-		headerComment,
-		'module.exports = {',
-		modules.map(function(name) {
-			return '\t' + name + ': require(\'./' + name + '.js\')';
-		}).join(',\n'),
-		'};'
-	].join('\n')
-);
+const indexModuleContent = `${headerComment}
+
+module.exports = {
+${modules.map(name => {
+	return `\t${name}: require('./${name}.js')`
+}).join(',\n')}
+};
+`;
+
+fs.writeFileSync(path.resolve(outputPath, 'index.js'), indexModuleContent);

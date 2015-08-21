@@ -4,8 +4,8 @@
   "description": "Twitter official precompiled regexps",
   "main": "src/index.js",
   "scripts": {
-    "generate": "node src/generate",
-    "doc": "node src/doc",
+    "generate": "babel-node src/generate",
+    "doc": "babel-node src/doc",
     "preversion": "npm run generate && npm run doc"
   },
   "keywords": [
@@ -22,6 +22,7 @@
   "author": "Igor Kalashnikov <igor.kalashnikov@me.com> (https://github.com/silentroach)",
   "license": "MIT",
   "devDependencies": {
+    "babel": "^5.8.21",
     "del": "^1.2.1",
     "js-string-escape": "^1.0.0",
     "twitter-text": "1.12.0"

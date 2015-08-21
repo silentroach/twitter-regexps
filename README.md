@@ -16,11 +16,12 @@ Extract hashtags.
 ### Examples
 
 ```js
-var regexps = require('twitter-regexps');
+var regexp = require('twitter-regexps/hashtag');
 
-var data = regexps.hashtag.exec('Some text with #hashtag');
-/* hashtag  */ data.3;     // 'hashtag'
-/* position */ data.index; // 14
+var data = regexp.exec('Some text with #hashtag');
+data.3; // 'hashtag' (hashtag)
+data.index; // 14 (position)
+
 ```
 
 ## mention
@@ -30,11 +31,12 @@ Extract mentions.
 ### Examples
 
 ```js
-var regexps = require('twitter-regexps');
+var regexp = require('twitter-regexps/mention');
 
-var data = regexps.mention.exec('Some @username mention');
-/* username */ data.3;     // 'username'
-/* position */ data.index; // 4
+var data = regexp.exec('Some @username mention');
+data.3; // 'username' (username)
+data.index; // 4 (position)
+
 ```
 
 ## url
@@ -44,12 +46,14 @@ Extract urls.
 ### Examples
 
 ```js
-var regexps = require('twitter-regexps');
+var regexp = require('twitter-regexps/url');
 
-var data = regexps.url.exec('Some tweet with https://www.wikipedia.org/wiki/twitter link');
-/* url      */ data.3;     // 'https://www.wikipedia.org/wiki/twitter'
-/* protocol */ data.4;     // 'https://'
-/* domain   */ data.5;     // 'www.wikipedia.org'
-/* path     */ data.7;     // '/wiki/twitter'
-/* position */ data.index; // 15
+var data = regexp.exec('Some tweet with https://www.wikipedia.org/wiki/twitter link');
+data.3; // 'https://www.wikipedia.org/wiki/twitter' (url)
+data.4; // 'https://' (protocol)
+data.5; // 'www.wikipedia.org' (domain)
+data.7; // '/wiki/twitter' (path)
+data.index; // 15 (position)
+
 ```
+
