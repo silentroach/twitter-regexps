@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "node build.js",
-    "clean": "rimraf src",
-    "prepublish": "npm run clean && npm run build"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "twitter",
@@ -14,16 +13,12 @@
     "regexp",
     "precompiled"
   ],
-  "files": [
-    "src/"
-  ],
   "homepage": "https://github.com/silentroach/twitter-regexps",
   "author": "Igor Kalashnikov <igor.kalashnikov@me.com> (https://github.com/silentroach)",
   "license": "MIT",
   "devDependencies": {
+    "del": "^1.2.1",
     "js-string-escape": "^1.0.0",
-    "mkdirp": "^0.5.1",
-    "rimraf": "^2.4.2",
     "twitter-text": "^1.12.0"
   }
 }

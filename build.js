@@ -4,7 +4,7 @@ var fs = require('fs');
 var twitterText = require('twitter-text');
 var twitterTextPackageInfo = require('twitter-text/package.json');
 var jsStringEscape = require('js-string-escape');
-var mkdirp = require('mkdirp');
+var del = require('del');
 
 // twitter text regexen property => regexp filename
 var map = {
@@ -16,10 +16,9 @@ var map = {
 var headerComment = '// generated automatically from twitter-text@' +
 	twitterTextPackageInfo.version + ' (' + twitterTextPackageInfo.homepage + ')';
 
-var outputPath = path.resolve(__dirname, 'src');
 var modules = [];
 
-mkdirp.sync(outputPath);
+del.sync(['*.js', '!build.js']);
 
 Object.keys(map).forEach(function(regexenKey) {
 	var targetName = map[regexenKey];
@@ -35,7 +34,7 @@ Object.keys(map).forEach(function(regexenKey) {
 	var parts = escaped.match(/\/(.*)\/([^\/]*)/);
 
 	fs.writeFileSync(
-		path.resolve(outputPath, targetName + '.js'),
+		path.resolve(__dirname, targetName + '.js'),
 		[
 			headerComment,
 			'// require(\'twitter-text\').regexen.' + regexenKey,
@@ -45,7 +44,7 @@ Object.keys(map).forEach(function(regexenKey) {
 });
 
 fs.writeFileSync(
-	path.resolve(outputPath, 'index.js'),
+	path.resolve(__dirname, 'index.js'),
 	[
 		headerComment,
 		'module.exports = {',
