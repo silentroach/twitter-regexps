@@ -1,0 +1,14 @@
+{
+  "description": "Extract hashtags.",
+  "examples": {
+    "exec": [
+      {
+        "input": "Some text with #hashtag",
+        "args": {
+          "3": "hashtag",
+          "index": "position"
+        }
+      }
+    ]
+  }
+}

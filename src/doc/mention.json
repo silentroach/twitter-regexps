@@ -1,0 +1,14 @@
+{
+  "description": "Extract mentions.",
+  "examples": {
+    "exec": [
+      {
+        "input": "Some @username mention",
+        "args": {
+          "3": "username",
+          "index": "position"
+        }
+      }
+    ]
+  }
+}

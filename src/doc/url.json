@@ -1,0 +1,17 @@
+{
+  "description": "Extract urls.",
+  "examples": {
+    "exec": [
+      {
+        "input": "Some tweet with https://www.wikipedia.org/wiki/twitter link",
+        "args": {
+          "3": "url",
+          "4": "protocol",
+          "5": "domain",
+          "7": "path",
+          "index": "position"
+        }
+      }
+    ]
+  }
+}
