@@ -5,6 +5,7 @@
       {
         "input": "Some text with #hashtag",
         "args": {
+          "2": "sign",
           "3": "hashtag",
           "index": "position"
         }

@@ -19,6 +19,7 @@ Extract hashtags.
 var regexp = require('twitter-regexps/hashtag');
 
 var data = regexp.exec('Some text with #hashtag');
+data.2; // '#' (sign)
 data.3; // 'hashtag' (hashtag)
 data.index; // 14 (position)
 
@@ -34,6 +35,7 @@ Extract mentions.
 var regexp = require('twitter-regexps/mention');
 
 var data = regexp.exec('Some @username mention');
+data.2; // '@' (sign)
 data.3; // 'username' (username)
 data.index; // 4 (position)
 

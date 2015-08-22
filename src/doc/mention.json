@@ -5,6 +5,7 @@
       {
         "input": "Some @username mention",
         "args": {
+          "2": "sign",
           "3": "username",
           "index": "position"
         }
