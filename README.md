@@ -22,7 +22,6 @@ var data = regexp.exec('Some text with #hashtag');
 data.2; // '#' (sign)
 data.3; // 'hashtag' (hashtag)
 data.index; // 14 (position)
-
 ```
 
 ## mention
@@ -38,7 +37,6 @@ var data = regexp.exec('Some @username mention');
 data.2; // '@' (sign)
 data.3; // 'username' (username)
 data.index; // 4 (position)
-
 ```
 
 ## url
@@ -56,6 +54,5 @@ data.4; // 'https://' (protocol)
 data.5; // 'www.wikipedia.org' (domain)
 data.7; // '/wiki/twitter' (path)
 data.index; // 15 (position)
-
 ```
 

@@ -17,8 +17,7 @@ function generateExecExampleData(regexp, example) {
 	return `var data = regexp.exec('${example.input}');
 ${Object.keys(args).map(key => {
 	return `data.${key}; // ${util.inspect(result[key])} (${args[key]})`;
-}).join('\n')}
-`;
+}).join('\n')}`;
 }
 
 function generateExampleData(regexp, type, example) {
