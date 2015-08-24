@@ -6,12 +6,7 @@ const twitterTextPackageInfo = require('twitter-text/package.json');
 const jsStringEscape = require('js-string-escape');
 const del = require('del');
 
-// twitter text regexen property => regexp filename
-const map = {
-	validHashtag: 'hashtag',
-	validMentionOrList: 'mention',
-	extractUrl: 'url'
-};
+const map = require('./map');
 
 const headerComment = `// generated automatically from twitter-text@${twitterTextPackageInfo.version} (${twitterTextPackageInfo.homepage})`;
 

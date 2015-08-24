@@ -6,7 +6,8 @@
   "scripts": {
     "generate": "babel-node src/generate",
     "doc": "babel-node src/doc",
-    "preversion": "npm run generate && npm run doc"
+    "preversion": "npm run generate && npm run doc",
+    "test": "mocha -r babel/register test/src/*"
   },
   "keywords": [
     "twitter",
@@ -25,6 +26,7 @@
     "babel": "^5.8.21",
     "del": "^1.2.1",
     "js-string-escape": "^1.0.0",
+    "mocha": "^2.2.5",
     "twitter-text": "1.12.0"
   }
 }
