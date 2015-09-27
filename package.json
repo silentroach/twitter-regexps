@@ -23,10 +23,10 @@
   "author": "Igor Kalashnikov <igor.kalashnikov@me.com> (https://github.com/silentroach)",
   "license": "MIT",
   "devDependencies": {
-    "babel": "^5.8.21",
-    "del": "^2.0.1",
-    "js-string-escape": "^1.0.0",
-    "mocha": "^2.2.5",
+    "babel": "5.8.23",
+    "del": "2.0.2",
+    "js-string-escape": "1.0.0",
+    "mocha": "2.3.3",
     "twitter-text": "1.13.2"
   }
 }
