@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/twitter-regexps.svg?style=flat-square)](https://www.npmjs.com/package/twitter-regexps)
 [![Travis](https://img.shields.io/travis/silentroach/twitter-regexps.svg?style=flat-square&label=travis)](https://travis-ci.org/silentroach/twitter-regexps)
-[![David](https://img.shields.io/david/dev/silentroach/twitter-regexps.svg?style=flat-square&label=deps)](https://david-dm.org/silentroach/twitter-regexps#info=devDependencies)
+[![David](https://img.shields.io/david/dev/silentroach/twitter-regexps.svg?style=flat-square&label=dev-deps)](https://david-dm.org/silentroach/twitter-regexps#info=devDependencies)
 
 Some regular expressions extracted from [twitter-text package](https://www.npmjs.com/package/twitter-text).
 
