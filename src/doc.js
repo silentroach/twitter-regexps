@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 
+const twitterTextPackageInfo = require('twitter-text/package.json');
 const regexps = require('../');
 
 const readmePath = path.resolve(__dirname, '../README.md');
@@ -37,15 +38,13 @@ function generateDocumentForFile(filename) {
 	);
 
 	let output = `
-## ${propname}
+### ${propname}
 
 ${data.description}
 `;
 
 	if (data.examples) {
 		output += `
-### Examples
-
 \`\`\`js
 var regexp = require('twitter-regexps/${propname}');
 
@@ -58,6 +57,10 @@ ${Object.keys(data.examples).map(key => generateExampleData(regexp, key, data.ex
 }
 
 const output = `${docHeader}${splitter}
+
+Current version is \`${twitterTextPackageInfo.version}\`.
+
+## Examples
 ${fs.readdirSync(docPath).map(filename => generateDocumentForFile(filename)).join('')}
 `;
 

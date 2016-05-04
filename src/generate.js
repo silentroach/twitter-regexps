@@ -14,7 +14,7 @@ const outputPath = path.resolve(__dirname, '..');
 
 const modules = [];
 
-del.sync(['../*.js']);
+del.sync([path.resolve(__dirname, '../*.js')]);
 
 Object.keys(map).forEach(regexenKey => {
 	const targetName = map[regexenKey];

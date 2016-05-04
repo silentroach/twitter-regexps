@@ -9,11 +9,13 @@ All regexps are provided as is without any modifications.
 
 <!-- CUT -->
 
-## hashtag
+Current version is `1.13.4`.
+
+## Examples
+
+### hashtag
 
 Extract hashtags.
-
-### Examples
 
 ```js
 var regexp = require('twitter-regexps/hashtag');
@@ -24,11 +26,9 @@ data.3; // 'hashtag' (hashtag)
 data.index; // 14 (position)
 ```
 
-## mention
+### mention
 
 Extract mentions.
-
-### Examples
 
 ```js
 var regexp = require('twitter-regexps/mention');
@@ -39,11 +39,9 @@ data.3; // 'username' (username)
 data.index; // 4 (position)
 ```
 
-## url
+### url
 
 Extract urls.
-
-### Examples
 
 ```js
 var regexp = require('twitter-regexps/url');

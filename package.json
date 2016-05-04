@@ -4,10 +4,10 @@
   "description": "Twitter official precompiled regexps",
   "main": "src/index.js",
   "scripts": {
-    "generate": "babel-node src/generate",
-    "doc": "babel-node src/doc",
+    "generate": "node src/generate",
+    "doc": "node src/doc",
     "preversion": "npm run generate && npm run doc",
-    "test": "mocha -r babel/register test/src/*"
+    "test": "mocha test/src/*"
   },
   "keywords": [
     "twitter",
@@ -23,7 +23,7 @@
   "author": "Igor Kalashnikov <igor.kalashnikov@me.com> (https://github.com/silentroach)",
   "license": "MIT",
   "devDependencies": {
-    "babel": "^5.8.21",
+    "babel-cli": "^6.8.0",
     "del": "^2.0.1",
     "js-string-escape": "^1.0.0",
     "mocha": "^2.2.5",

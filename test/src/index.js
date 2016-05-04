@@ -1,8 +1,8 @@
-import twitterText from 'twitter-text';
-import assert from 'assert';
+const twitterText = require('twitter-text');
+const assert = require('assert');
 
-import regexps from '../..';
-import map from '../../src/map';
+const regexps = require('../..');
+const map = require('../../src/map');
 
 describe('Generated regexps', () => {
 
