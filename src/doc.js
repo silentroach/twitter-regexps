@@ -58,7 +58,7 @@ ${Object.keys(data.examples).map(key => generateExampleData(regexp, key, data.ex
 
 const output = `${docHeader}${splitter}
 
-Current version is \`${twitterTextPackageInfo.version}\`.
+Current used \`twitter-text\` package version is \`${twitterTextPackageInfo.version}\`.
 
 ## Examples
 ${fs.readdirSync(docPath).map(filename => generateDocumentForFile(filename)).join('')}
