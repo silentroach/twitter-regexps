@@ -40,11 +40,9 @@ module.exports = new RegExp("${escapedRegexp}", "${escapedRegexpFlags}");
 
 const indexModuleContent = `${headerComment}
 
-module.exports = {
 ${modules.map(name => {
-	return `\t${name}: require('./${name}.js')`
-}).join(',\n')}
-};
+	return `exports.${name} = require('./${name}.js');`
+}).join('\n')}
 `;
 
 fs.writeFileSync(path.resolve(outputPath, 'index.js'), indexModuleContent);
