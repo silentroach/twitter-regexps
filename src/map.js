@@ -2,5 +2,6 @@
 module.exports = {
 	extractUrl: 'url',
 	validHashtag: 'hashtag',
-	validMentionOrList: 'mention'
+	validMentionOrList: 'mention',
+	validCashtag: 'cashtag'
 };

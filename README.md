@@ -13,6 +13,19 @@ Current used `twitter-text` package version is `1.14.0`.
 
 ## Examples
 
+### cashtag
+
+Extract cashtags.
+
+```js
+var regexp = require('twitter-regexps/cashtag');
+
+var data = regexp.exec('Some text with cashtag $GE');
+data.2; // '$' (sign)
+data.3; // 'GE' (cashtag)
+data.index; // 22 (position)
+```
+
 ### hashtag
 
 Extract hashtags.

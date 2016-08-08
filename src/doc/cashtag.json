@@ -1,0 +1,15 @@
+{
+  "description": "Extract cashtags.",
+  "examples": {
+    "exec": [
+      {
+        "input": "Some text with cashtag $GE",
+        "args": {
+          "2": "sign",
+          "3": "cashtag",
+          "index": "position"
+        }
+      }
+    ]
+  }
+}
