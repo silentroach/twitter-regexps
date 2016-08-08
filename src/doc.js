@@ -37,6 +37,8 @@ function generateDocumentForFile(filename) {
 		fs.readFileSync(path.resolve(docPath, filename), { encoding: 'UTF-8' })
 	);
 
+	console.log(`Generating info for ${propname}...`);
+
 	let output = `
 ### ${propname}
 
