@@ -26,6 +26,6 @@
     "del": "^3.0.0",
     "js-string-escape": "^1.0.0",
     "mocha": "^3.4.2",
-    "twitter-text": "^1.14.6"
+    "twitter-text": "^1.14.7"
   }
 }

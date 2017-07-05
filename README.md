@@ -9,7 +9,7 @@ All regexps are provided as is without any modifications.
 
 <!-- CUT -->
 
-Current used `twitter-text` package version is `1.14.6`.
+Current used `twitter-text` package version is `1.14.7`.
 
 ## Examples
 
