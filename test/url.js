@@ -33,3 +33,10 @@ testCashtag('Some tweet with multiple links, https://www.wikipedia.org/wiki/twit
 		'https://', 'ya.ru', ''
 	]
 ]);
+
+testCashtag('Some short link ya.ru', [
+	[
+		'ya.ru',
+		'', 'ya.ru', ''
+	]
+]);
