@@ -2,12 +2,12 @@
   "name": "twitter-regexps",
   "version": "1.3.4",
   "description": "Twitter official precompiled regexps",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "generate": "node src/generate",
     "doc": "node src/doc",
     "preversion": "npm run generate && npm run doc",
-    "test": "mocha test/src/*"
+    "test": "ava"
   },
   "keywords": [
     "twitter",
@@ -23,9 +23,14 @@
   "author": "Igor Kalashnikov <igor.kalashnikov@me.com> (https://github.com/silentroach)",
   "license": "MIT",
   "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
     "del": "^3.0.0",
-    "js-string-escape": "^1.0.0",
-    "mocha": "^3.5.0",
-    "twitter-text": "^1.14.7"
-  }
+    "js-string-escape": "^1.0.0"
+  },
+  "dependencies": {}
 }

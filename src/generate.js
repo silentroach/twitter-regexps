@@ -1,10 +1,19 @@
 const path = require('path');
 const fs = require('fs');
-
-const twitterText = require('twitter-text');
-const twitterTextPackageInfo = require('twitter-text/package.json');
 const jsStringEscape = require('js-string-escape');
 const del = require('del');
+
+require('babel-register')({
+	only: '/original',
+	plugins: [
+		'transform-es2015-modules-commonjs'
+	]
+});
+
+const twitterTextPackageInfo = require('../original/js/package.json');
+
+const regexps = require('../original/js/src/regexp').default;
+regexps.extractUrl = require('../original/js/src/regexp/extractUrl').default;
 
 const map = require('./map');
 
@@ -18,7 +27,7 @@ del.sync([path.resolve(__dirname, '../*.js')]);
 
 Object.keys(map).forEach(regexenKey => {
 	const targetName = map[regexenKey];
-	const regexp = twitterText.regexen[regexenKey];
+	const regexp = regexps[regexenKey];
 
 	if (undefined === regexp) {
 		throw new Error('Failed to find regexp ' + regexenKey);
@@ -31,7 +40,7 @@ Object.keys(map).forEach(regexenKey => {
 
 	const moduleContent = `${headerComment}
 
-// require('twitter-text').regexen.${regexenKey}
+// [twitter-text/src/regexp]::${regexenKey}
 module.exports = new RegExp("${escapedRegexp}", "${escapedRegexpFlags}");
 `;
 

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 
-const twitterTextPackageInfo = require('twitter-text/package.json');
+const twitterTextPackageInfo = require('../original/js/package.json');
 const regexps = require('../');
 
 const readmePath = path.resolve(__dirname, '../README.md');

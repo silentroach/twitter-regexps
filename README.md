@@ -5,11 +5,11 @@
 
 Some regular expressions extracted from [twitter-text package](https://www.npmjs.com/package/twitter-text).
 
-All regexps are provided as is without any modifications.
+The reason I create this package is the `twitter-text` original script size and amount of work compiler and processor needs to do just to use it (all regexps are compiling at runtime). Here in my package you have compiled regexps and you can use regexp you need only, not just a full package. All regexps are provided as is without any modifications.
 
 <!-- CUT -->
 
-Current used `twitter-text` package version is `1.14.7`.
+Current used `twitter-text` package version is `2.0.3`.
 
 ## Examples
 
