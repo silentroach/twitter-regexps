@@ -9,7 +9,7 @@ The reason I create this package is the `twitter-text` original script size and 
 
 <!-- CUT -->
 
-Current used `twitter-text` package version is `2.0.3`.
+Current used `twitter-text` package version is `2.0.5`.
 
 ## Examples
 
