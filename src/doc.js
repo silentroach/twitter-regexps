@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const util = require('util');
+const chalk = require('chalk');
 
 const twitterTextPackageInfo = require('../original/js/package.json');
 const regexps = require('../');
@@ -37,7 +38,7 @@ function generateDocumentForFile(filename) {
 		fs.readFileSync(path.resolve(docPath, filename), { encoding: 'UTF-8' })
 	);
 
-	console.log(`Generating info for ${propname}...`);
+	console.log(`${chalk.grey('›')} ${chalk.green(`generating info for ${propname}...`)}`);
 
 	let output = `
 ### ${propname}

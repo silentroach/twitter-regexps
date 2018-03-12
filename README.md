@@ -3,9 +3,9 @@
 [![npm](https://img.shields.io/npm/v/twitter-regexps.svg?style=flat-square)](https://www.npmjs.com/package/twitter-regexps)
 [![Travis](https://img.shields.io/travis/silentroach/twitter-regexps.svg?style=flat-square&label=travis)](https://travis-ci.org/silentroach/twitter-regexps)
 
-Some regular expressions extracted from [twitter-text package](https://www.npmjs.com/package/twitter-text).
+Some regular expressions extracted from [twitter-text package](https://www.npmjs.com/package/twitter-text) and optimized with [regexp-tree](https://www.npmjs.com/package/regexp-tree).
 
-The reason I create this package is the `twitter-text` original script size and amount of work compiler and processor needs to do just to use it (all regexps are compiling at runtime). Here in my package you have compiled regexps and you can use regexp you need only, not just a full package. All regexps are provided as is without any modifications.
+The reason I create this package is the `twitter-text` original script size and amount of work compiler and processor needs to do just to use it (all regexps are compiling at runtime). Here in my package you have compiled regexps and you can use regexp you need only, not just a full package.
 
 <!-- CUT -->
 
