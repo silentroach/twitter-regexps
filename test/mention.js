@@ -2,7 +2,7 @@ const test = require('ava').test;
 
 const regexp = require('../mention');
 
-function testCashtag(original, rawResults) {
+function testMention(original, rawResults) {
 
 	const results = [].concat(rawResults);
 
@@ -19,5 +19,5 @@ function testCashtag(original, rawResults) {
 
 }
 
-testCashtag('Some @username mention', 'username');
-testCashtag('Some @username and @othername mentions', ['username', 'othername']);
+testMention('Some @username mention', 'username');
+testMention('Some @username and @othername mentions', ['username', 'othername']);

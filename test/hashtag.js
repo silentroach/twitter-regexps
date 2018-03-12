@@ -2,7 +2,7 @@ const test = require('ava').test;
 
 const regexp = require('../hashtag');
 
-function testCashtag(original, rawResults) {
+function testHashtag(original, rawResults) {
 
 	const results = [].concat(rawResults);
 
@@ -19,5 +19,5 @@ function testCashtag(original, rawResults) {
 
 }
 
-testCashtag('Some text with #hashtag', 'hashtag');
-testCashtag('Multiple tags, for example #hashtag and #hashtag2', ['hashtag', 'hashtag2']);
+testHashtag('Some text with #hashtag', 'hashtag');
+testHashtag('Multiple tags, for example #hashtag and #hashtag2', ['hashtag', 'hashtag2']);
