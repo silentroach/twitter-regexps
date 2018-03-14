@@ -11,6 +11,15 @@ The reason I create this package is the `twitter-text` original script size and 
 
 Current used `twitter-text` package version is `2.0.5`.
 
+## Current list of regular expressions
+
+* url
+* cashtag
+* hashtag
+* mention
+* hashsign
+* atsign
+
 ## Examples
 
 ### cashtag

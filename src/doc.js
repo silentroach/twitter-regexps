@@ -11,6 +11,7 @@ const docPath = path.resolve(__dirname, 'doc/');
 
 const splitter = '<!-- CUT -->';
 const [docHeader] = fs.readFileSync(readmePath, { encoding: 'UTF-8' }).split(splitter);
+const regexpMap = require('./map');
 
 function generateExecExampleData(regexp, example) {
 	const result = regexp.exec(example.input);
@@ -62,6 +63,10 @@ ${Object.keys(data.examples).map(key => generateExampleData(regexp, key, data.ex
 const output = `${docHeader}${splitter}
 
 Current used \`twitter-text\` package version is \`${twitterTextPackageInfo.version}\`.
+
+## Current list of regular expressions
+
+${Object.keys(regexpMap).map(key => `* ${regexpMap[key]}`).join('\n')}
 
 ## Examples
 ${fs.readdirSync(docPath).map(filename => generateDocumentForFile(filename)).join('')}
