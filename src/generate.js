@@ -4,8 +4,18 @@ const del = require('del');
 const chalk = require('chalk');
 const {optimize} = require('regexp-tree');
 
+const jsLoader = require.extensions['.js'];
+require.extensions['.js'] = function(module, filename) {
+	// don't know how to disable overriding babel config :{
+	if (/babelPreset\.js$/.test(filename)) {
+		return '';
+	}
+
+	return jsLoader.apply(this, arguments);
+};
+
 require('babel-register')({
-	only: '/original',
+	only: '/original/js/src',
 	plugins: [
 		'transform-es2015-modules-commonjs'
 	]

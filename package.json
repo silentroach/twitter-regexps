@@ -6,7 +6,7 @@
   "scripts": {
     "generate": "node src/generate",
     "doc": "node src/doc",
-    "preversion": "npm run generate && npm run doc",
+    "preversion": "git submodule update --recursive && npm run generate && npm run doc",
     "test": "ava"
   },
   "keywords": [
