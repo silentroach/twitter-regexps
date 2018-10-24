@@ -1,16 +1,8 @@
 const path = require('path');
 const fs = require('fs');
-const jsStringEscape = require('js-string-escape');
 const del = require('del');
 const chalk = require('chalk');
 const {optimize} = require('regexp-tree');
-
-function regexpToSource(regexp) {
-	const escaped = jsStringEscape(regexp);
-	const [_, escapedRegexp, escapedRegexpFlags] = escaped.match(/\/(.*)\/([^\/]*)/);
-
-	return `new RegExp("${escapedRegexp}", "${escapedRegexpFlags}")`;
-}
 
 require('babel-register')({
 	only: '/original',
@@ -46,14 +38,13 @@ Object.keys(map).forEach(regexenKey => {
 
 	console.log(`${chalk.grey('›')} ${chalk.green(`optimizing ${targetName}...`)}`);
 
-	const optimized = optimize(regexp).toRegExp();
+	const optimized = optimize(regexp).toString();
 
 	const moduleContent = [
 		`${headerComment}`,
 		'',
 		`// [twitter-text/src/regexp]::${regexenKey}`,
-		// `// unoptimized = ${regexpToSource(regexp)};`,
-		`module.exports = ${regexpToSource(optimized)};`
+		`module.exports = ${optimized};`
 	].join('\n');
 
 	fs.writeFileSync(path.resolve(outputPath, targetName + '.js'), moduleContent);
