@@ -14,10 +14,10 @@ require.extensions['.js'] = function(module, filename) {
 	return jsLoader.apply(this, arguments);
 };
 
-require('babel-register')({
-	only: '/original/js/src',
+require('@babel/register')({
+	only: ['original/js/src'],
 	plugins: [
-		'transform-es2015-modules-commonjs'
+		'@babel/plugin-transform-modules-commonjs'
 	]
 });
 
