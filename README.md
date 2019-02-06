@@ -23,9 +23,9 @@ Current used `twitter-text` package version is `3.0.0`.
 
 ## Examples
 
-### cashtag
+### cashtag 
 
-Extract cashtags.
+Extract cashtags. [source](cashtag.js)
 
 ```js
 var regexp = require('twitter-regexps/cashtag');
@@ -36,9 +36,9 @@ data.3; // 'GE' (cashtag)
 data.index; // 22 (position)
 ```
 
-### hashtag
+### hashtag 
 
-Extract hashtags.
+Extract hashtags. [source](hashtag.js)
 
 ```js
 var regexp = require('twitter-regexps/hashtag');
@@ -49,9 +49,9 @@ data.3; // 'hashtag' (hashtag)
 data.index; // 14 (position)
 ```
 
-### mention
+### mention 
 
-Extract mentions.
+Extract mentions. [source](mention.js)
 
 ```js
 var regexp = require('twitter-regexps/mention');
@@ -62,9 +62,9 @@ data.3; // 'username' (username)
 data.index; // 4 (position)
 ```
 
-### url
+### url 
 
-Extract urls.
+Extract urls. [source](url.js)
 
 ```js
 var regexp = require('twitter-regexps/url');

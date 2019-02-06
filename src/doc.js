@@ -42,9 +42,9 @@ function generateDocumentForFile(filename) {
 	console.log(`${chalk.grey('›')} ${chalk.green(`generating info for ${propname}...`)}`);
 
 	let output = `
-### ${propname}
+### ${propname} 
 
-${data.description}
+${data.description} [source](${propname}.js)
 `;
 
 	if (data.examples) {
