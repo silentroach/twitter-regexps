@@ -10,7 +10,7 @@ The reason I create this package is the `twitter-text` original package size (ab
 
 <!-- CUT -->
 
-Current used `twitter-text` package version is `3.0.0`.
+Current used `twitter-text` package version is `3.0.1`.
 
 ## Current list of regular expressions
 

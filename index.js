@@ -1,4 +1,4 @@
-// generated automatically from twitter-text@3.0.0 (https://github.com/twitter/twitter-text)
+// generated automatically from twitter-text@3.0.1 (https://github.com/twitter/twitter-text)
 
 exports.url = require('./url.js');
 exports.cashtag = require('./cashtag.js');
