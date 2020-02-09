@@ -31,7 +31,15 @@
     "ava": "^3.2.0",
     "chalk": "^3.0.0",
     "del": "^5.1.0",
+    "husky": "^4.2.1",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
     "regexp-tree": "^0.1.18"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
 }
