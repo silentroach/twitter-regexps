@@ -1,0 +1,14 @@
+{
+  "description": "Extract emoji.",
+  "examples": {
+    "exec": [
+      {
+        "input": "Some text with 🧡 Twemoji!",
+        "args": {
+          "0": "emoji",
+          "index": "position"
+        }
+      }
+    ]
+  }
+}

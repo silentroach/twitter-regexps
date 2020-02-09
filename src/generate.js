@@ -15,20 +15,30 @@ require.extensions['.js'] = function(module, filename) {
 };
 
 require('@babel/register')({
-	only: ['original/js/src'],
+	only: [
+		'original/js/src',
+		'original-twemoji/src'
+	],
 	plugins: [
 		'@babel/plugin-transform-modules-commonjs'
 	]
 });
 
 const twitterTextPackageInfo = require('../original/js/package.json');
+const twemojiPackageInfo = require('../original-twemoji/package.json');
 
 const regexps = require('../original/js/src/regexp').default;
 regexps.extractUrl = require('../original/js/src/regexp/extractUrl').default;
+regexps.emoji = require('../original-twemoji/src/lib/regex').default;
 
 const map = require('./map');
 
-const headerComment = `// generated automatically from twitter-text@${twitterTextPackageInfo.version} (${twitterTextPackageInfo.homepage})`;
+const headerComment = `/* generated automatically
+ *
+ * twitter-text@${twitterTextPackageInfo.version} (${twitterTextPackageInfo.homepage})
+ * twemoji-parser@${twemojiPackageInfo.version}
+ */
+`;
 
 const outputPath = path.resolve(__dirname, '..');
 
@@ -52,8 +62,6 @@ Object.keys(map).forEach(regexenKey => {
 
 	const moduleContent = [
 		`${headerComment}`,
-		'',
-		`// [twitter-text/src/regexp]::${regexenKey}`,
 		`module.exports = ${optimized};`
 	].join('\n');
 

@@ -18,6 +18,7 @@ Current used `twitter-text` package version is `3.0.1`.
 * cashtag
 * hashtag
 * mention
+* emoji
 * hashsign
 * atsign
 
@@ -34,6 +35,18 @@ var data = regexp.exec('Some text with cashtag $GE');
 data.2; // '$' (sign)
 data.3; // 'GE' (cashtag)
 data.index; // 22 (position)
+```
+
+### emoji 
+
+Extract emoji. [source](emoji.js)
+
+```js
+var regexp = require('twitter-regexps/emoji');
+
+var data = regexp.exec('Some text with 🧡 Twemoji!');
+data.0; // '🧡' (emoji)
+data.index; // 15 (position)
 ```
 
 ### hashtag 

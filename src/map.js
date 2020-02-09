@@ -4,6 +4,7 @@ module.exports = {
 	validCashtag: 'cashtag',
 	validHashtag: 'hashtag',
 	validMentionOrList: 'mention',
+	emoji: 'emoji',
 
 	// signs
 	hashSigns: 'hashsign',

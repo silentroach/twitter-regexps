@@ -1,3 +1,6 @@
 [submodule "original"]
 	path = original
 	url = https://github.com/twitter/twitter-text.git
+[submodule "original-twemoji"]
+	path = original-twemoji
+	url = https://github.com/twitter/twemoji-parser.git

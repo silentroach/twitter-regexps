@@ -7,7 +7,7 @@
     "generate": "node src/generate",
     "doc": "node src/doc",
     "preversion": "git submodule update --recursive && npm run generate && npm run doc",
-    "test": "ava"
+    "test": "ava test/*.js"
   },
   "keywords": [
     "twitter",
