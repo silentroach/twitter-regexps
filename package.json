@@ -1,6 +1,6 @@
 {
   "name": "twitter-regexps",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Twitter official precompiled regexps",
   "main": "index.js",
   "scripts": {
