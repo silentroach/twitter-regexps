@@ -5,7 +5,7 @@ const regexp = require("../emoji");
 function testEmoji(original, rawResults) {
   const results = [].concat(rawResults);
 
-  test(`Should process [${original}]`, t => {
+  test(`Should process [${original}]`, (t) => {
     const extracted = [];
     let matches;
     while ((matches = regexp.exec(original))) {

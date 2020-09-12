@@ -5,7 +5,7 @@ const chalk = require("chalk");
 const { optimize } = require("regexp-tree");
 
 const jsLoader = require.extensions[".js"];
-require.extensions[".js"] = function(module, filename) {
+require.extensions[".js"] = function (module, filename) {
   // don't know how to disable overriding babel config :{
   if (/babelPreset\.js$/.test(filename)) {
     return "";
@@ -16,7 +16,7 @@ require.extensions[".js"] = function(module, filename) {
 
 require("@babel/register")({
   only: ["original/js/src", "original-twemoji/src"],
-  plugins: ["@babel/plugin-transform-modules-commonjs"]
+  plugins: ["@babel/plugin-transform-modules-commonjs"],
 });
 
 const twitterTextPackageInfo = require("../original/js/package.json");
@@ -41,7 +41,7 @@ const modules = [];
 
 del.sync([path.resolve(__dirname, "../*.js")]);
 
-Object.keys(map).forEach(regexenKey => {
+Object.keys(map).forEach((regexenKey) => {
   const targetName = map[regexenKey];
   const regexp = regexps[regexenKey];
 
@@ -59,7 +59,7 @@ Object.keys(map).forEach(regexenKey => {
 
   const moduleContent = [
     `${headerComment}`,
-    `module.exports = ${optimized};`
+    `module.exports = ${optimized};`,
   ].join("\n");
 
   fs.writeFileSync(path.resolve(outputPath, targetName + ".js"), moduleContent);
@@ -67,7 +67,7 @@ Object.keys(map).forEach(regexenKey => {
 
 const indexModuleContent = `${headerComment}
 ${modules
-  .map(name => {
+  .map((name) => {
     return `exports.${name} = require('./${name}.js');`;
   })
   .join("\n")}

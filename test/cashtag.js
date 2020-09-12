@@ -5,7 +5,7 @@ const regexp = require("../cashtag");
 function testCashtag(original, rawResults) {
   const results = [].concat(rawResults);
 
-  test(`Should process [${original}]`, t => {
+  test(`Should process [${original}]`, (t) => {
     const extracted = [];
     while (regexp.exec(original)) {
       t.is(RegExp.$2, "$");

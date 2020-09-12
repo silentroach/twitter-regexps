@@ -5,7 +5,7 @@ const regexp = require("../mention");
 function testMention(original, rawResults) {
   const results = [].concat(rawResults);
 
-  test(`Should process [${original}]`, t => {
+  test(`Should process [${original}]`, (t) => {
     const extracted = [];
     while (regexp.exec(original)) {
       t.is(RegExp.$2, "@");
@@ -20,5 +20,5 @@ function testMention(original, rawResults) {
 testMention("Some @username mention", "username");
 testMention("Some @username and @othername mentions", [
   "username",
-  "othername"
+  "othername",
 ]);

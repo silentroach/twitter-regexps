@@ -21,7 +21,7 @@ function generateExecExampleData(regexp, example) {
 
   return `var data = regexp.exec('${example.input}');
 ${Object.keys(args)
-  .map(key => {
+  .map((key) => {
     return `data.${key}; // ${util.inspect(result[key])} (${args[key]})`;
   })
   .join("\n")}`;
@@ -30,7 +30,7 @@ ${Object.keys(args)
 function generateExampleData(regexp, type, example) {
   switch (type) {
     case "exec":
-      return example.map(element => generateExecExampleData(regexp, element));
+      return example.map((element) => generateExecExampleData(regexp, element));
     default:
       throw new Error(`Unknown example type ${type}`);
   }
@@ -58,7 +58,7 @@ ${data.description} [source](${propname}.js)
 \`\`\`js
 var regexp = require('twitter-regexps/${propname}');
 
-${Object.keys(data.examples).map(key =>
+${Object.keys(data.examples).map((key) =>
   generateExampleData(regexp, key, data.examples[key])
 )}
 \`\`\`
@@ -77,13 +77,13 @@ Current used \`twitter-text\` package version is \`${
 ## Current list of regular expressions
 
 ${Object.keys(regexpMap)
-  .map(key => `* ${regexpMap[key]}`)
+  .map((key) => `* ${regexpMap[key]}`)
   .join("\n")}
 
 ## Examples
 ${fs
   .readdirSync(docPath)
-  .map(filename => generateDocumentForFile(filename))
+  .map((filename) => generateDocumentForFile(filename))
   .join("")}
 `;
 

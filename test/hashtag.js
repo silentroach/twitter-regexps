@@ -5,7 +5,7 @@ const regexp = require("../hashtag");
 function testHashtag(original, rawResults) {
   const results = [].concat(rawResults);
 
-  test(`Should process [${original}]`, t => {
+  test(`Should process [${original}]`, (t) => {
     const extracted = [];
     while (regexp.exec(original)) {
       t.is(RegExp.$2, "#");
@@ -20,5 +20,5 @@ function testHashtag(original, rawResults) {
 testHashtag("Some text with #hashtag", "hashtag");
 testHashtag("Multiple tags, for example #hashtag and #hashtag2", [
   "hashtag",
-  "hashtag2"
+  "hashtag2",
 ]);

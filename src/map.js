@@ -8,5 +8,5 @@ module.exports = {
 
   // signs
   hashSigns: "hashsign",
-  atSigns: "atsign"
+  atSigns: "atsign",
 };

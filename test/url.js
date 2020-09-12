@@ -5,7 +5,7 @@ const regexp = require("../url");
 function testUrl(original, rawResults, name) {
   const results = [].concat(rawResults);
 
-  test(name || `Should process [${original}]`, t => {
+  test(name || `Should process [${original}]`, (t) => {
     const extracted = [];
     while (regexp.exec(original)) {
       extracted.push([RegExp.$3, RegExp.$4, RegExp.$5, RegExp.$7]);
@@ -20,8 +20,8 @@ testUrl("Some tweet with https://www.wikipedia.org/wiki/twitter link", [
     "https://www.wikipedia.org/wiki/twitter",
     "https://",
     "www.wikipedia.org",
-    "/wiki/twitter"
-  ]
+    "/wiki/twitter",
+  ],
 ]);
 
 testUrl(
@@ -31,9 +31,9 @@ testUrl(
       "https://www.wikipedia.org/wiki/twitter",
       "https://",
       "www.wikipedia.org",
-      "/wiki/twitter"
+      "/wiki/twitter",
     ],
-    ["https://ya.ru", "https://", "ya.ru", ""]
+    ["https://ya.ru", "https://", "ya.ru", ""],
   ]
 );
 
