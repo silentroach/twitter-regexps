@@ -1,7 +1,7 @@
 /* generated automatically
  *
- * twitter-text@3.0.1 (https://github.com/twitter/twitter-text)
- * twemoji-parser@12.1.3
+ * twitter-text@3.1.0 (https://github.com/twitter/twitter-text)
+ * twemoji-parser@13.0.0
  */
 
 exports.url = require("./url.js");

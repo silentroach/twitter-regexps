@@ -10,21 +10,21 @@ The reason I create this package is the `twitter-text` original package size (ab
 
 <!-- CUT -->
 
-Current used `twitter-text` package version is `3.0.1`.
+Current used `twitter-text` package version is `3.1.0`.
 
 ## Current list of regular expressions
 
-* url
-* cashtag
-* hashtag
-* mention
-* emoji
-* hashsign
-* atsign
+- url
+- cashtag
+- hashtag
+- mention
+- emoji
+- hashsign
+- atsign
 
 ## Examples
 
-### cashtag 
+### cashtag
 
 Extract cashtags. [source](cashtag.js)
 
@@ -37,7 +37,7 @@ data.3; // 'GE' (cashtag)
 data.index; // 22 (position)
 ```
 
-### emoji 
+### emoji
 
 Extract emoji. [source](emoji.js)
 
@@ -49,7 +49,7 @@ data.0; // '🧡' (emoji)
 data.index; // 15 (position)
 ```
 
-### hashtag 
+### hashtag
 
 Extract hashtags. [source](hashtag.js)
 
@@ -62,7 +62,7 @@ data.3; // 'hashtag' (hashtag)
 data.index; // 14 (position)
 ```
 
-### mention 
+### mention
 
 Extract mentions. [source](mention.js)
 
@@ -75,7 +75,7 @@ data.3; // 'username' (username)
 data.index; // 4 (position)
 ```
 
-### url 
+### url
 
 Extract urls. [source](url.js)
 
@@ -89,4 +89,3 @@ data.5; // 'www.wikipedia.org' (domain)
 data.7; // '/wiki/twitter' (path)
 data.index; // 15 (position)
 ```
-
