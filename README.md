@@ -10,7 +10,10 @@ The reason I create this package is the `twitter-text` original package size (ab
 
 <!-- CUT -->
 
-Current used `twitter-text` package version is `3.1.0`.
+Packages versions:
+
+- twitter-text@3.1.0
+- twemoji-parser@14.0.0
 
 ## Current list of regular expressions
 

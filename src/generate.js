@@ -1,5 +1,5 @@
-const path = require("path");
-const fs = require("fs");
+const path = require("node:path");
+const fs = require("node:fs");
 const del = require("del");
 const chalk = require("chalk");
 const { optimize } = require("regexp-tree");

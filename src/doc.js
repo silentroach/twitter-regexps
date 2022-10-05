@@ -1,9 +1,10 @@
-const fs = require("fs");
-const path = require("path");
-const util = require("util");
+const fs = require("node:fs");
+const path = require("node:path");
+const util = require("node:util");
 const chalk = require("chalk");
 
 const twitterTextPackageInfo = require("../original/js/package.json");
+const twemojiPackageInfo = require("../original-twemoji/package.json");
 const regexps = require("../");
 
 const readmePath = path.resolve(__dirname, "../README.md");
@@ -70,9 +71,9 @@ ${Object.keys(data.examples).map((key) =>
 
 const output = `${docHeader}${splitter}
 
-Current used \`twitter-text\` package version is \`${
-  twitterTextPackageInfo.version
-}\`.
+Packages versions:
+* twitter-text@${twitterTextPackageInfo.version}
+* twemoji-parser@${twemojiPackageInfo.version}
 
 ## Current list of regular expressions
 
