@@ -10,7 +10,8 @@
     "generate": "node src/generate",
     "doc": "node src/doc",
     "preversion": "git submodule update --recursive && npm run generate && npm run doc",
-    "test": "ava test/*.js"
+    "test": "ava test/*.js",
+    "prepare": "husky install"
   },
   "keywords": [
     "twitter",
@@ -34,14 +35,9 @@
     "ava": "^4.0.1",
     "chalk": "^4.1.0",
     "del": "^6.0.0",
-    "husky": "^4.3.0",
+    "husky": "^8.0.1",
     "prettier": "^2.2.0",
     "pretty-quick": "^3.1.0",
     "regexp-tree": "^0.1.21"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }
