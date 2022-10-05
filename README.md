@@ -6,11 +6,11 @@
 
 Some regular expressions extracted from [twitter-text package](https://www.npmjs.com/package/twitter-text) and optimized with [regexp-tree](https://www.npmjs.com/package/regexp-tree).
 
-The reason I create this package is the `twitter-text` original package size (about 2Mb) and amount of work compiler and processor needs to do just to use it (all regexps are compiling at runtime). Here in my package you have compiled regexps and you can use only regexp you need, not just a full package.
+The reason I create this package is the `twitter-text` original package size (about 2Mb) and amount of work compiler and processor needs to do just to use it (all regexps are compiling at runtime). Here in my package with compiled regexps, so you can use only regexps you need.
 
 <!-- CUT -->
 
-Packages versions:
+Packages used:
 
 - twitter-text@3.1.0
 - twemoji-parser@14.0.0

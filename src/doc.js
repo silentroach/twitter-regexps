@@ -71,7 +71,7 @@ ${Object.keys(data.examples).map((key) =>
 
 const output = `${docHeader}${splitter}
 
-Packages versions:
+Packages used:
 * twitter-text@${twitterTextPackageInfo.version}
 * twemoji-parser@${twemojiPackageInfo.version}
 
