@@ -1,7 +1,7 @@
 # Twitter precompiled regular expressions
 
 [![npm](https://img.shields.io/npm/v/twitter-regexps.svg)](https://www.npmjs.com/package/twitter-regexps)
-[![Travis](https://img.shields.io/github/workflow/status/silentroach/twitter-regexps/Test.svg?label=build)](https://github.com/silentroach/twitter-regexps/actions)
+[![Travis](https://img.shields.io/github/actions/workflow/status/silentroach/twitter-regexps/test.yml?branch=master)](https://github.com/silentroach/twitter-regexps/actions)
 [![install size](https://packagephobia.now.sh/badge?p=twitter-regexps)](https://packagephobia.now.sh/result?p=twitter-regexps)
 
 Some regular expressions extracted from [twitter-text package](https://www.npmjs.com/package/twitter-text) and optimized with [regexp-tree](https://www.npmjs.com/package/regexp-tree).
