@@ -36,7 +36,7 @@
     "chalk": "^4.1.2",
     "del": "^6.1.1",
     "husky": "^8.0.1",
-    "prettier": "^2.2.0",
+    "prettier": "^3.1.1",
     "pretty-quick": "^3.1.0",
     "regexp-tree": "^0.1.21"
   }
