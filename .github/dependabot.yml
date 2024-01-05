@@ -5,3 +5,12 @@ updates:
     schedule:
       interval: "weekly"
       day: "friday"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: daily
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          ["version-update:semver-patch", "version-update:semver-minor"]
