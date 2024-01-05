@@ -34,7 +34,7 @@ testUrl(
       "/wiki/twitter",
     ],
     ["https://ya.ru", "https://", "ya.ru", ""],
-  ]
+  ],
 );
 
 testUrl("Some short link ya.ru", [["ya.ru", "", "ya.ru", ""]]);
@@ -42,5 +42,5 @@ testUrl("Some short link ya.ru", [["ya.ru", "", "ya.ru", ""]]);
 testUrl(
   "http://twitter.com/は素晴らしい",
   [["http://twitter.com/", "http://", "twitter.com", "/"]],
-  "Special non-latin case with disabled extraction cause of no space"
+  "Special non-latin case with disabled extraction cause of no space",
 );

@@ -41,11 +41,11 @@ function generateDocumentForFile(filename) {
   const propname = path.basename(filename, ".json");
   const regexp = regexps[propname];
   const data = JSON.parse(
-    fs.readFileSync(path.resolve(docPath, filename), { encoding: "UTF-8" })
+    fs.readFileSync(path.resolve(docPath, filename), { encoding: "UTF-8" }),
   );
 
   console.log(
-    `${chalk.grey("›")} ${chalk.green(`generating info for ${propname}...`)}`
+    `${chalk.grey("›")} ${chalk.green(`generating info for ${propname}...`)}`,
   );
 
   let output = `
@@ -60,7 +60,7 @@ ${data.description} [source](${propname}.js)
 var regexp = require('twitter-regexps/${propname}');
 
 ${Object.keys(data.examples).map((key) =>
-  generateExampleData(regexp, key, data.examples[key])
+  generateExampleData(regexp, key, data.examples[key]),
 )}
 \`\`\`
 `;

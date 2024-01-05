@@ -52,7 +52,7 @@ Object.keys(map).forEach((regexenKey) => {
   modules.push(targetName);
 
   console.log(
-    `${chalk.grey("›")} ${chalk.green(`optimizing ${targetName}...`)}`
+    `${chalk.grey("›")} ${chalk.green(`optimizing ${targetName}...`)}`,
   );
 
   const optimized = optimize(regexp).toString();
