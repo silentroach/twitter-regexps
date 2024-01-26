@@ -5,6 +5,14 @@ updates:
     schedule:
       interval: "weekly"
       day: "friday"
+    groups:
+      types:
+        patterns:
+          - "@types/*"
+      production:
+        dependency-type: "production"
+      development:
+        dependency-type: "development"
 
   - package-ecosystem: "github-actions"
     directory: "/"
