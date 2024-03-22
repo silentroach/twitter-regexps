@@ -49,7 +49,7 @@ function generateDocumentForFile(filename) {
   );
 
   let output = `
-### ${propname} 
+### ${propname}
 
 ${data.description} [source](${propname}.js)
 `;
@@ -72,13 +72,14 @@ ${Object.keys(data.examples).map((key) =>
 const output = `${docHeader}${splitter}
 
 Packages used:
-* twitter-text@${twitterTextPackageInfo.version}
-* twemoji-parser@${twemojiPackageInfo.version}
+
+- twitter-text@${twitterTextPackageInfo.version}
+- twemoji-parser@${twemojiPackageInfo.version}
 
 ## Current list of regular expressions
 
 ${Object.keys(regexpMap)
-  .map((key) => `* ${regexpMap[key]}`)
+  .map((key) => `- ${regexpMap[key]}`)
   .join("\n")}
 
 ## Examples
@@ -88,4 +89,4 @@ ${fs
   .join("")}
 `;
 
-fs.writeFileSync(readmePath, output);
+fs.writeFileSync(readmePath, output.trim() + "\n");
