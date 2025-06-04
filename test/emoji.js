@@ -1,18 +1,17 @@
-const test = require("ava");
-
-const regexp = require("../emoji");
+import { test, expect } from "vitest";
+import regexp from "../emoji.js";
 
 function testEmoji(original, rawResults) {
   const results = [].concat(rawResults);
 
-  test(`Should process [${original}]`, (t) => {
+  test(`Should process [${original}]`, () => {
     const extracted = [];
     let matches;
     while ((matches = regexp.exec(original))) {
       extracted.push(matches[0]);
     }
 
-    t.deepEqual(results, extracted);
+    expect(extracted).toEqual(results);
   });
 }
 

@@ -1,17 +1,16 @@
-const test = require("ava");
-
-const regexp = require("../url");
+import { test, expect } from "vitest";
+import regexp from "../url.js";
 
 function testUrl(original, rawResults, name) {
   const results = [].concat(rawResults);
 
-  test(name || `Should process [${original}]`, (t) => {
+  test(name || `Should process [${original}]`, () => {
     const extracted = [];
     while (regexp.exec(original)) {
       extracted.push([RegExp.$3, RegExp.$4, RegExp.$5, RegExp.$7]);
     }
 
-    t.deepEqual(results, extracted);
+    expect(extracted).toEqual(results);
   });
 }
 

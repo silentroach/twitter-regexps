@@ -1,19 +1,18 @@
-const test = require("ava");
-
-const regexp = require("../cashtag");
+import { test, expect } from "vitest";
+import regexp from "../cashtag.js";
 
 function testCashtag(original, rawResults) {
   const results = [].concat(rawResults);
 
-  test(`Should process [${original}]`, (t) => {
+  test(`Should process [${original}]`, () => {
     const extracted = [];
     while (regexp.exec(original)) {
-      t.is(RegExp.$2, "$");
+      expect(RegExp.$2).toBe("$");
 
       extracted.push(RegExp.$3);
     }
 
-    t.deepEqual(results, extracted);
+    expect(extracted).toEqual(results);
   });
 }
 

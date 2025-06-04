@@ -10,7 +10,8 @@
     "generate": "node src/generate",
     "doc": "node src/doc",
     "preversion": "git submodule update --recursive && npm run generate && npm run doc",
-    "test": "ava test/*.js",
+    "build": "vite build",
+    "test": "vitest run",
     "prepare": "husky install"
   },
   "keywords": [
@@ -35,7 +36,8 @@
     "@babel/plugin-transform-modules-commonjs": "^7.12.1",
     "@babel/preset-env": "^7.12.7",
     "@babel/register": "^7.12.1",
-    "ava": "~5.3.1",
+    "vite": "^4.2.0",
+    "vitest": "^1.5.0",
     "chalk": "~4.1.2",
     "del": "~6.1.1",
     "husky": "^9.0.6",
